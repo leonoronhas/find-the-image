@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     fontFamily: "mouseMemoirs",
-    fontSize: RFPercentage(5),
+    fontSize: RFPercentage(4),
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 1,
     textShadowColor: "#000",

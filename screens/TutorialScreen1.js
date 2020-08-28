@@ -30,7 +30,7 @@ const TutorialScreen1 = ({ params }) => {
         </View>
         <View style={styles.buttonContainer}>
           <DefaultButton style={{ marginVertical: 30 }}>
-            Get Started!
+            Roman
           </DefaultButton>
           <DefaultButton>Decimals</DefaultButton>
           <DefaultButton>Binary</DefaultButton>

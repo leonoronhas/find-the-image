@@ -13,24 +13,20 @@ const CategoryScreen = () => {
     <ViewBackground>
       <StatusBar hidden />
       <View style={styles.container}>
-        <View style={styles.categoryContainer}>
-          <View style={styles.options}>
-            <DefaultBodyText>Choose number category:</DefaultBodyText>
-            <DefaultButton>Choose</DefaultButton>
-          </View>
-          <View>
-            <DefaultBodyText>Choose difficulty:</DefaultBodyText>
-            <DefaultButton>Choose</DefaultButton>
-          </View>
-        </View>
         <View style={styles.text}>
-          <DefaultBodyText>Are you ready?</DefaultBodyText>
+          <DefaultBodyText>Choose category:</DefaultBodyText>
         </View>
-        <View style={styles.readyContainer}>
-          <DefaultButton style={styles.ready}>I'm ready!</DefaultButton>
+        <View style={styles.categoryContainer}>
+          <DefaultButton style={{ marginVertical: 10 }}>Roman</DefaultButton>
+          <DefaultButton>Decimals</DefaultButton>
+          <DefaultButton>Binary</DefaultButton>
+          <DefaultButton>Hexadecimals</DefaultButton>
+          <DefaultButton>Percent</DefaultButton>
+          <DefaultButton>Currency</DefaultButton>
         </View>
-        <View style={styles.homeContainer}>
-          <DefaultButton style={styles.home}>Home</DefaultButton>
+        <View style={styles.doneContainer}>
+          <DefaultButton style={styles.done}>Done!</DefaultButton>
+          <DefaultButton style={styles.random}>Random</DefaultButton>
         </View>
       </View>
     </ViewBackground>
@@ -43,8 +39,10 @@ const styles = StyleSheet.create({
   },
   categoryContainer: {
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "center",
+    marginVertical: 20
   },
   options: {
     alignItems: "center",
@@ -55,22 +53,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 20,
   },
-  readyContainer: {
+  doneContainer: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "space-around",
+    flexDirection: "row",
     marginVertical: 20,
   },
-  ready: {
+  done: {
     backgroundColor: Color.done,
   },
-  homeContainer: {
-    flex: 1,
-    marginHorizontal: 10,
-    marginVertical: 10,
-  },
-  home: {
-    width: scale(120),
-    height: verticalScale(50),
+  random: {
+    backgroundColor: Color.warning,
   },
 });
 
