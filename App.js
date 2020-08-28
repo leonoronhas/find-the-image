@@ -1,9 +1,9 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import React from "react";
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 
-import GetStartedScreen from './screens/GetStartedScreen';
+import TutorialScreen2 from "./screens/TutorialScreen2";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -13,8 +13,5 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return (
-    <GetStartedScreen />
-  );
+  return <TutorialScreen2 />;
 }
-

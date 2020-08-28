@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: Color.primary,
+    backgroundColor: Color.done,
     paddingVertical: 10,
     paddingHorizontal: 30,
     // Shadow props iOS only
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     // Elevation props Android only
     elevation: 8,
-    backgroundColor: Color.primary,
     borderRadius: 40,
     width: scale(485),
     height: verticalScale(30),
