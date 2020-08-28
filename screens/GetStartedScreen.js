@@ -8,6 +8,8 @@ import {
   SafeAreaView,
 } from "react-native";
 
+import DefaultText from '../components/DefaultText';
+
 const GetStartedScreen = ({ params }) => (
   <SafeAreaView style={styles.container}>
     <StatusBar hidden />
@@ -15,7 +17,8 @@ const GetStartedScreen = ({ params }) => (
       source={require("../assets/images/backgroundImage.png")}
       style={styles.image}
     >
-      <Text style={styles.text}>Inside</Text>
+        <View>
+      <DefaultText style={styles.text}>Inside</DefaultText></View>
     </ImageBackground>
   </SafeAreaView>
 );
@@ -31,9 +34,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    color: "grey",
+    color: "white",
     fontSize: 30,
-    fontWeight: "bold",
+    textAlign: "center"
   },
 });
 
