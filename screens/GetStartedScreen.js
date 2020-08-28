@@ -1,26 +1,23 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import {
-  Text,
   View,
   StyleSheet,
-  ImageBackground,
   SafeAreaView,
 } from "react-native";
 
-import DefaultTitleText from '../components/DefaultTitleText';
+import Color from '../constants/colors';
+import ViewBackground from '../components/ViewBackground';
+import DefaultTitleText from "../components/DefaultTitleText";
 
 const GetStartedScreen = ({ params }) => (
-  <SafeAreaView style={styles.container}>
+  <ViewBackground style={styles.container}>
     <StatusBar hidden />
-    <ImageBackground
-      source={require("../assets/images/backgroundImage.png")}
-      style={styles.image}
-    >
-        <View>
-      <DefaultTitleText style={styles.text}>Find the Number!</DefaultTitleText></View>
-    </ImageBackground>
-  </SafeAreaView>
+    
+    <View>
+      <DefaultTitleText style={styles.text}>Find the Number!</DefaultTitleText>
+    </View>
+  </ViewBackground>
 );
 
 const styles = StyleSheet.create({
@@ -29,7 +26,7 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    padding:10,
+    padding: 10,
     resizeMode: "contain",
     justifyContent: "center",
   },
