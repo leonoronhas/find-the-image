@@ -7,17 +7,16 @@ import { scale, verticalScale } from "react-native-size-matters";
 import Color from "../constants/colors";
 import ViewBackground from "../components/ViewBackground";
 import DefaultTitleText from "../components/DefaultTitleText";
-import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultButton from "../components/DefaultButton";
 
-const TutorialScreen2 = ({ params }) => {
+const TutorialScreen3 = ({ params }) => {
   return (
     <ViewBackground style={styles.container}>
       <StatusBar hidden />
       <View
         style={{
           flex: 1,
-          justifyContent: "center",
+          justifyContent: "space-around",
           alignItems: "center",
           marginVertical: 10,
         }}
@@ -25,28 +24,11 @@ const TutorialScreen2 = ({ params }) => {
         <View style={styles.titleContainer}>
           <View style={styles.title}>
             <DefaultTitleText style={{ fontSize: RFPercentage(7) }}>
-              Choose your difficulty!
+              Tap I'm ready! and find the number before the time runs out!
             </DefaultTitleText>
           </View>
         </View>
-        <View style={styles.textContainer}>
-          <View style={styles.easy}>
-            <DefaultBodyText style={styles.easyText}>EASY:</DefaultBodyText>
-            <DefaultBodyText>30 seconds</DefaultBodyText>
-            <DefaultBodyText>40 numbers</DefaultBodyText>
-          </View>
-          <View style={styles.medium}>
-            <DefaultBodyText style={styles.mediumText}>MEDIUM:</DefaultBodyText>
-            <DefaultBodyText>30 seconds</DefaultBodyText>
-            <DefaultBodyText>60 numbers</DefaultBodyText>
-          </View>
-          <View style={styles.hard}>
-            <DefaultBodyText style={styles.hardText}>HARD:</DefaultBodyText>
-            <DefaultBodyText>20 seconds</DefaultBodyText>
-            <DefaultBodyText>80 numbers</DefaultBodyText>
-          </View>
-        </View>
-        <DefaultButton style={styles.nextButton}>Next</DefaultButton>
+        <DefaultButton>I'm ready!</DefaultButton>
       </View>
     </ViewBackground>
   );
@@ -73,8 +55,8 @@ const styles = StyleSheet.create({
     // Elevation props Android only
     elevation: 8,
     borderRadius: 40,
-    width: scale(430),
-    height: verticalScale(70),
+    width: scale(600),
+    height: verticalScale(150),
   },
   textContainer: {
     flex: 1,
@@ -87,27 +69,6 @@ const styles = StyleSheet.create({
     height: verticalScale(50),
     backgroundColor: Color.warning,
   },
-  easy: {
-    width: scale(200),
-  },
-  easyText: {
-    color: Color.success,
-    fontSize: RFPercentage(6),
-  },
-  medium: {
-    width: scale(200),
-  },
-  mediumText: {
-    color: Color.warning,
-    fontSize: RFPercentage(6),
-  },
-  hard: {
-    width: scale(200),
-  },
-  hardText: {
-    color: Color.danger,
-    fontSize: RFPercentage(6),
-  },
 });
 
-export default TutorialScreen2;
+export default TutorialScreen3;

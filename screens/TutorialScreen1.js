@@ -23,7 +23,7 @@ const TutorialScreen1 = ({ params }) => {
       >
         <View style={styles.titleContainer}>
           <View style={styles.title}>
-            <DefaultTitleText style={{ fontSize: RFPercentage(6) }}>
+            <DefaultTitleText style={{ fontSize: RFPercentage(7) }}>
               Choose a number category!
             </DefaultTitleText>
           </View>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     elevation: 8,
     borderRadius: 40,
     width: scale(430),
-    height: verticalScale(60),
+    height: verticalScale(70),
   },
   buttonContainer: {
     flex: 1,
