@@ -3,7 +3,7 @@ import React from "react";
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 
-import HomeScreen from "./screens/HomeScreen";
+import CategoryScreen from "./screens/CategoryScreen";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -13,5 +13,5 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <HomeScreen />;
+  return <CategoryScreen />;
 }
