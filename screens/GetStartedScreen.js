@@ -8,7 +8,7 @@ import {
   SafeAreaView,
 } from "react-native";
 
-import DefaultText from '../components/DefaultText';
+import DefaultTitleText from '../components/DefaultTitleText';
 
 const GetStartedScreen = ({ params }) => (
   <SafeAreaView style={styles.container}>
@@ -18,7 +18,7 @@ const GetStartedScreen = ({ params }) => (
       style={styles.image}
     >
         <View>
-      <DefaultText style={styles.text}>Inside</DefaultText></View>
+      <DefaultTitleText style={styles.text}>Find the Number!</DefaultTitleText></View>
     </ImageBackground>
   </SafeAreaView>
 );
@@ -34,9 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    color: "white",
-    fontSize: 30,
-    textAlign: "center"
+    // Add here if needed
   },
 });
 
