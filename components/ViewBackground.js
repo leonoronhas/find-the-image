@@ -4,8 +4,8 @@ import { View, StyleSheet } from "react-native";
 import Color from "../constants/colors";
 
 /*===============================================
-= DefaultTitleText will replace the <Text> with the applied
-= custom fonts for all Title texts
+= ViewBackground will replace the background setup
+= color for the menu screens
 =============================================== */
 const ViewBackground = (props) => (
   <View style={{ ...styles.container, ...props.style }}>
