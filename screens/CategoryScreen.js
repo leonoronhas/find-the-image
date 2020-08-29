@@ -1,7 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
-import { scale, verticalScale } from "react-native-size-matters";
 
 import Color from "../constants/colors";
 import ViewBackground from "../components/ViewBackground";
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "center",
-    marginVertical: 20
+    marginVertical: 20,
   },
   options: {
     alignItems: "center",
