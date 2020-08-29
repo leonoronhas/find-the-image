@@ -2,12 +2,12 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 import Color from "../constants/colors";
 import ViewBackground from "../components/ViewBackground";
 import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultButton from "../components/DefaultButton";
-import { RFPercentage } from "react-native-responsive-fontsize";
 
 const DifficultyScreen = () => {
   return (
@@ -23,7 +23,7 @@ const DifficultyScreen = () => {
           <View style={styles.options}>
             <DefaultButton style={styles.buttonEasy}>Easy</DefaultButton>
             <DefaultBodyText style={styles.difficultyText}>
-              30 seconds to find the
+              30 seconds to match the
             </DefaultBodyText>
             <DefaultBodyText style={styles.difficultyText}>
               number among
@@ -35,7 +35,7 @@ const DifficultyScreen = () => {
           <View style={styles.options}>
             <DefaultButton style={styles.buttonMedium}>Medium</DefaultButton>
             <DefaultBodyText style={styles.difficultyText}>
-              30 seconds to find the
+              30 seconds to match the
             </DefaultBodyText>
             <DefaultBodyText style={styles.difficultyText}>
               number among
@@ -47,7 +47,7 @@ const DifficultyScreen = () => {
           <View style={styles.options}>
             <DefaultButton style={styles.buttonHard}>Hard</DefaultButton>
             <DefaultBodyText style={styles.difficultyText}>
-              20 seconds to find the
+              20 seconds to match the
             </DefaultBodyText>
             <DefaultBodyText style={styles.difficultyText}>
               number among

@@ -14,7 +14,7 @@ const GetStartedScreen = ({ params }) => (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <View style={styles.title}>
-          <DefaultTitleText>Find the Number!</DefaultTitleText>
+          <DefaultTitleText>Match the Number!</DefaultTitleText>
         </View>
       </View>
       <View style={styles.buttonContainer}>

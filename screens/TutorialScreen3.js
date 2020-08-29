@@ -24,7 +24,7 @@ const TutorialScreen3 = ({ params }) => {
         <View style={styles.titleContainer}>
           <View style={styles.title}>
             <DefaultTitleText style={{ fontSize: RFPercentage(7) }}>
-              Tap I'm ready! and find the number before the time runs out!
+              Tap I'm ready! and match the number before the time runs out!
             </DefaultTitleText>
           </View>
         </View>
