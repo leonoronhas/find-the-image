@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "find-the-image",
-    "slug": "find-the-image",
+    "name": "match-the-number",
+    "slug": "match-the-number",
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
