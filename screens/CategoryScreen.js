@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 
 import Color from "../constants/colors";
@@ -10,7 +9,6 @@ import DefaultButton from "../components/DefaultButton";
 const CategoryScreen = () => {
   return (
     <ViewBackground>
-      <StatusBar hidden />
       <View style={styles.container}>
         <View style={styles.text}>
           <DefaultBodyText>Choose category:</DefaultBodyText>

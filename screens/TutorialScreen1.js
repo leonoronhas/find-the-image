@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { StatusBar } from "expo-status-bar";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { scale, verticalScale } from "react-native-size-matters";
 
@@ -12,7 +11,6 @@ import DefaultButton from "../components/DefaultButton";
 const TutorialScreen1 = ({ params }) => {
   return (
     <ViewBackground style={styles.container}>
-      <StatusBar hidden />
       <View
         style={{
           flex: 1,
@@ -29,9 +27,7 @@ const TutorialScreen1 = ({ params }) => {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <DefaultButton style={{ marginVertical: 30 }}>
-            Roman
-          </DefaultButton>
+          <DefaultButton style={{ marginVertical: 30 }}>Roman</DefaultButton>
           <DefaultButton>Decimals</DefaultButton>
           <DefaultButton>Binary</DefaultButton>
           <DefaultButton>Hexadecimal</DefaultButton>

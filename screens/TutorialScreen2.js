@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { StatusBar } from "expo-status-bar";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { scale, verticalScale } from "react-native-size-matters";
 
@@ -13,7 +12,6 @@ import DefaultButton from "../components/DefaultButton";
 const TutorialScreen2 = ({ params }) => {
   return (
     <ViewBackground style={styles.container}>
-      <StatusBar hidden />
       <View
         style={{
           flex: 1,

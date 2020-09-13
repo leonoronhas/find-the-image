@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 import { RFPercentage } from "react-native-responsive-fontsize";
@@ -17,7 +16,6 @@ const BeforeGameScreen = ({ navigation }) => {
 
   return (
     <ViewBackground>
-      <StatusBar hidden />
       <View style={styles.container}>
         <View style={styles.rightContainer}>
           <DefaultTitleText style={styles.matchTitleText}>

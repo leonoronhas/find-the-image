@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 
@@ -11,7 +10,6 @@ import DefaultButton from "../components/DefaultButton";
 const NewGameScreen = ({ params }) => {
   return (
     <ViewBackground>
-      <StatusBar hidden />
       <View style={styles.container}>
         <View style={styles.categoryContainer}>
           <View style={styles.options}>

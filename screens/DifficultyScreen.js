@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 import { RFPercentage } from "react-native-responsive-fontsize";
@@ -12,7 +11,6 @@ import DefaultButton from "../components/DefaultButton";
 const DifficultyScreen = () => {
   return (
     <ViewBackground>
-      <StatusBar hidden />
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <DefaultBodyText style={styles.text}>

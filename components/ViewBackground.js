@@ -1,5 +1,6 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { View, StyleSheet, SafeAreaView } from "react-native";
 
 import Color from "../constants/colors";
 
@@ -8,9 +9,10 @@ import Color from "../constants/colors";
 = color for the menu screens
 =============================================== */
 const ViewBackground = (props) => (
-  <View style={{ ...styles.container, ...props.style }}>
+  <SafeAreaView style={{ ...styles.container, ...props.style }}>
+    <StatusBar hidden />
     <View style={{ ...styles.body, ...props.style }}>{props.children}</View>
-  </View>
+  </SafeAreaView>
 );
 
 const styles = StyleSheet.create({

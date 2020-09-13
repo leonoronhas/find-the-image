@@ -12,10 +12,10 @@ const Divider = (props) => (
 );
 
 const styles = StyleSheet.create({
-    divider: {
-        height: verticalScale(250),
-        width: scale(5),
-      },
+  divider: {
+    height: verticalScale(250),
+    width: scale(5),
+  },
 });
 
 export default Divider;
