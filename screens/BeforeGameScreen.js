@@ -41,7 +41,7 @@ const BeforeGameScreen = ({ navigation }) => {
               size={30}
               timeToShow={["S"]}
               timeLabels={{ s: null }}
-              digitStyle={{ backgroundColor: "#FFF" }}
+              digitStyle={{ backgroundColor: "#FFF" }} 
             />
           </View>
         </View>
