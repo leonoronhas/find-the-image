@@ -1,64 +1,43 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, SafeAreaView } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 
 import Color from "../constants/colors";
-import ViewBackground from "../components/ViewBackground";
 import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultButton from "../components/DefaultButton";
 
 const GetStartedScreen = ({ params }) => (
-  <ViewBackground>
-    <View style={styles.container}>
-      <View style={styles.titleContainer}>
+  <SafeAreaView style={styles.container}>
         <View style={styles.title}>
           <DefaultTitleText>Match the Number!</DefaultTitleText>
         </View>
-      </View>
       <View style={styles.buttonContainer}>
-        <DefaultButton>Get Started!</DefaultButton>
-        <DefaultButton>Skip Tutorial</DefaultButton>
+        <DefaultButton style={styles.skip}>SKIP TUTORIAL</DefaultButton>
+        <DefaultButton>GET STARTED!</DefaultButton>
       </View>
-    </View>
-  </ViewBackground>
+  </SafeAreaView>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-  },
-  titleContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingVertical: 20,
-    paddingHorizontal: 30,
+    justifyContent: 'center',
+    backgroundColor: Color.primary
   },
   title: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: Color.done,
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    // Shadow props iOS only
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 6,
-    shadowOpacity: 0.3,
-    // Elevation props Android only
-    elevation: 8,
-    borderRadius: 40,
-    width: scale(485),
-    height: verticalScale(30),
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  buttonContainer: {
+  buttonContainer: {    
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "center",
+    alignItems: 'center',
   },
+  skip:{
+    backgroundColor: Color.accent
+  }
 });
 
 export default GetStartedScreen;

@@ -9,7 +9,7 @@ const DefaultButton = (props) => {
     <TouchableOpacity
       onPress={props.onPress}
       style={{ ...styles.button, ...props.style }}
-      activeOpacity={0.7}
+      activeOpacity={0.8}
     >
       <Text style={styles.buttonText}>{props.children}</Text>
     </TouchableOpacity>
@@ -39,8 +39,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: Color.danger,
     fontFamily: "openSansBold",
-    fontSize: RFPercentage(3),
-
+    fontSize: RFPercentage(2.5),
   },
 });
 
