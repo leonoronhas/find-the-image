@@ -30,19 +30,17 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     // Elevation props Android only
     elevation: 8,
-    backgroundColor: Color.primary,
+    backgroundColor: 'white',
     padding: 15,
     borderRadius: 20,
     width: scale(190),
     height: verticalScale(50),
   },
   buttonText: {
-    color: "white",
-    fontFamily: "mouseMemoirs",
-    fontSize: RFPercentage(4),
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 1,
-    textShadowColor: "#000",
+    color: Color.danger,
+    fontFamily: "openSansBold",
+    fontSize: RFPercentage(3),
+
   },
 });
 
