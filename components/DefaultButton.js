@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     color: Color.danger,
     fontFamily: "openSansBold",
     fontSize: RFPercentage(2.5),
+    textAlign: 'center'
   },
 });
 
