@@ -12,13 +12,10 @@ const DefaultBodyText = (props) => (
 
 const styles = StyleSheet.create({
   body: {
-    fontFamily: "mouseMemoirs",
-    fontSize: RFPercentage(5),
+    fontFamily: "openSans",
+    fontSize: RFPercentage(4),
     textAlign: "center",
-    color: "white",
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 1,
-    textShadowColor: "#000",
+    color:  "white",
   },
 });
 
