@@ -1,38 +1,57 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, SafeAreaView, StatusBar, Text } from "react-native";
+import { scale } from "react-native-size-matters";
 
 import Color from "../constants/colors";
-import ViewBackground from "../components/ViewBackground";
-import DefaultBodyText from "../components/DefaultBodyText";
+import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultButton from "../components/DefaultButton";
 
 const CategoryScreen = () => {
+  const [categoryOption, setCategoryOption] = useState("random");
+
+  const handleOption = (category) => {
+    setCategoryOption(category);
+  };
+
   return (
-    <ViewBackground>
-      <View style={styles.container}>
-        <View style={styles.text}>
-          <DefaultBodyText>Choose category:</DefaultBodyText>
-        </View>
-        <View style={styles.categoryContainer}>
-          <DefaultButton style={{ marginVertical: 10 }}>Roman</DefaultButton>
-          <DefaultButton>Decimals</DefaultButton>
-          <DefaultButton>Binary</DefaultButton>
-          <DefaultButton>Hexadecimals</DefaultButton>
-          <DefaultButton>Percent</DefaultButton>
-          <DefaultButton>Currency</DefaultButton>
-        </View>
-        <View style={styles.doneContainer}>
-          <DefaultButton style={styles.done}>Done!</DefaultButton>
-          <DefaultButton style={styles.random}>Random</DefaultButton>
-        </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar hidden />
+      <View style={styles.text}>
+        <DefaultTitleText>Choose category:</DefaultTitleText>
       </View>
-    </ViewBackground>
+      <View style={styles.categoryContainer}>
+        <DefaultButton style={{ marginVertical: 10 }}>
+          <Text style={styles.buttonTextColor}>ROMAN</Text>
+        </DefaultButton>
+        <DefaultButton>
+          <Text style={styles.buttonTextColor}>DECIMAL</Text>
+        </DefaultButton>
+        <DefaultButton>
+          <Text style={styles.buttonTextColor}>BINARY</Text>
+        </DefaultButton>
+        <DefaultButton>
+          <Text style={styles.buttonTextColor}>HEXADECIMAL</Text>
+        </DefaultButton>
+        <DefaultButton>
+          <Text style={styles.buttonTextColor}>PERCENT</Text>
+        </DefaultButton>
+        <DefaultButton>
+          <Text style={styles.buttonTextColor}>CURRENCY</Text>
+        </DefaultButton>
+      </View>
+      <View style={styles.doneContainer}>
+        <DefaultButton style={styles.random}>RANDOM</DefaultButton>
+        <DefaultButton style={styles.done}>DONE!</DefaultButton>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
+    backgroundColor: Color.primary,
   },
   categoryContainer: {
     flexDirection: "row",
@@ -51,17 +70,25 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   doneContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     flexDirection: "row",
     marginVertical: 20,
+    width: scale(500),
   },
   done: {
-    backgroundColor: Color.done,
+    backgroundColor: "white",
   },
   random: {
-    backgroundColor: Color.warning,
+    backgroundColor: Color.accent,
+  },
+  buttonTextColor: {
+    color: Color.warning,
+  },
+  activeOption: {
+    backgroundColor: "#686C62",
+  },
+  inactiveOption: {
+    backgroundColor: "white",
   },
 });
 
