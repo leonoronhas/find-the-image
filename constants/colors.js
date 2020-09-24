@@ -1,9 +1,9 @@
   
 export default {
-    primary: '#FF8A00', // darker orange
-    accent: '#FFC978',  // ligher orange
-    danger: '#FF0000',  // strong red
+    primary: '#C12B2B', // darker red
+    accent: '#FFE68D',  // ligher orange
+    danger: '#E46161',  // ligth red
     done: '#4F8D00',    // darker green
-    warning: '#FFE600', // yellow
+    warning: '#FF8A00', // darker orange
     success: '#ADF552'  // light green
  };
