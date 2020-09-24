@@ -1,80 +1,70 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, SafeAreaView, StatusBar, Text } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 
 import Color from "../constants/colors";
-import ViewBackground from "../components/ViewBackground";
 import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultButton from "../components/DefaultButton";
 
 const HomeScreen = ({ params }) => (
-  <ViewBackground>
-    <View style={styles.container}>
-      <View style={styles.titleContainer}>
-        <View style={styles.title}>
-          <DefaultTitleText>Find the Number!</DefaultTitleText>
-        </View>
-      </View>
-      <View style={styles.buttonContainer}>
-        <DefaultButton style={styles.newGame}>New Game!</DefaultButton>
-        <DefaultButton style={styles.record}>Record</DefaultButton>
-      </View>
-      <View
-        style={{
-          alignItems: "center",
-          marginVertical: 10,
-        }}
-      >
-        <DefaultButton style={styles.quit}>quit...</DefaultButton>
-      </View>
+  <SafeAreaView style={styles.container}>
+    <StatusBar hidden />
+    <View style={styles.title}>
+      <DefaultTitleText>Match the Number!</DefaultTitleText>
     </View>
-  </ViewBackground>
+    <View style={styles.buttonContainer}>
+      <DefaultButton style={styles.record}>
+        <Text style={styles.buttonText}>RECORD</Text>
+      </DefaultButton>
+      <DefaultButton style={styles.newGame}>
+        <Text style={styles.buttonText}>NEW GAME</Text>
+      </DefaultButton>
+    </View>
+    <View
+      style={{
+        alignItems: "center",
+        marginVertical: 20,
+      }}
+    >
+      <DefaultButton style={styles.quit}>
+        <Text style={styles.buttonText2}>QUIT GAME</Text>
+      </DefaultButton>
+    </View>
+  </SafeAreaView>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-  },
-  titleContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingVertical: 20,
-    paddingHorizontal: 30,
+    backgroundColor: Color.primary,
   },
   title: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: Color.done,
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    // Shadow props iOS only
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 6,
-    shadowOpacity: 0.3,
-    // Elevation props Android only
-    elevation: 8,
-    borderRadius: 40,
-    width: scale(485),
-    height: verticalScale(100),
   },
   buttonContainer: {
-    flex: 1,
+    flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
   },
   newGame: {
-    backgroundColor: Color.primary,
+    backgroundColor: "white",
+  },
+  buttonText: {
+    color: Color.warning,
+  },
+  buttonText2: {
+    color: Color.accent,
   },
   record: {
-    backgroundColor: Color.warning,
+    backgroundColor: Color.accent,
   },
   quit: {
-    backgroundColor: Color.primary,
-    width: scale(120),
+    backgroundColor: Color.danger,
+    width: scale(170),
     height: verticalScale(50),
   },
 });
