@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet, SafeAreaView } from "react-native";
-import { scale, verticalScale } from "react-native-size-matters";
 
 import Color from "../constants/colors";
 import DefaultTitleText from "../components/DefaultTitleText";
