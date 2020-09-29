@@ -11,6 +11,7 @@ const CategoryScreen = () => {
 
   const handleOption = (category) => {
     setCategoryOption(category);
+    console.log(categoryOption);
   };
 
   return (
@@ -35,7 +36,7 @@ const CategoryScreen = () => {
         <DefaultButton>
           <Text style={styles.buttonTextColor}>PERCENT</Text>
         </DefaultButton>
-        <DefaultButton>
+        <DefaultButton >
           <Text style={styles.buttonTextColor}>CURRENCY</Text>
         </DefaultButton>
       </View>
