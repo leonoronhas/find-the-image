@@ -3,7 +3,7 @@ import React from "react";
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 
-import TutorialScreen from "./screens/TutorialScreen";
+import NewGameScreen from "./screens/NewGameScreen";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -15,5 +15,5 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <TutorialScreen />;
+  return <NewGameScreen />;
 }
