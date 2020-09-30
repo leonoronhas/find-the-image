@@ -6,7 +6,7 @@ import Color from "../constants/colors";
 import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultButton from "../components/DefaultButton";
 
-const HomeScreen = ({ params }) => (
+const HomeScreen = ({ navigation }) => (
   <SafeAreaView style={styles.container}>
     <StatusBar hidden />
     <View style={styles.title}>
@@ -16,7 +16,10 @@ const HomeScreen = ({ params }) => (
       <DefaultButton style={styles.record}>
         <Text style={styles.buttonText}>RECORD</Text>
       </DefaultButton>
-      <DefaultButton style={styles.newGame}>
+      <DefaultButton
+        style={styles.newGame}
+        onPress={() => navigation.navigate("NewGameScreen")}
+      >
         <Text style={styles.buttonText}>NEW GAME</Text>
       </DefaultButton>
     </View>

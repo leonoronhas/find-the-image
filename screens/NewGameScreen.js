@@ -8,7 +8,7 @@ import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultButton from "../components/DefaultButton";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
-const NewGameScreen = ({ params }) => {
+const NewGameScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />
@@ -17,23 +17,37 @@ const NewGameScreen = ({ params }) => {
           <DefaultBodyText style={styles.text}>
             CHOOSE CATEGORY:
           </DefaultBodyText>
-          <DefaultButton>CATEGORY</DefaultButton>
+          <DefaultButton onPress={() => navigation.navigate("CategoryScreen")}>
+            CATEGORY
+          </DefaultButton>
         </View>
         <View style={styles.options}>
           <DefaultBodyText style={styles.text}>
             CHOOSE DIFFICULTY:
           </DefaultBodyText>
-          <DefaultButton>DIFFICULTY</DefaultButton>
+          <DefaultButton
+            onPress={() => navigation.navigate("DifficultyScreen")}
+          >
+            DIFFICULTY
+          </DefaultButton>
         </View>
       </View>
       <View style={{ marginTop: 20 }}>
         <DefaultBodyText>ARE YOU READY?</DefaultBodyText>
       </View>
       <View style={styles.readyContainer}>
-        <DefaultButton style={styles.home}>
+        <DefaultButton
+          style={styles.home}
+          onPress={() => navigation.navigate("HomeScreen")}
+        >
           <DefaultBodyText style={styles.homeText}>HOME</DefaultBodyText>
         </DefaultButton>
-        <DefaultButton style={styles.ready}>I'M READY!</DefaultButton>
+        <DefaultButton
+          style={styles.ready}
+          onPress={() => navigation.navigate("BeforeGameScreen")}
+        >
+          I'M READY!
+        </DefaultButton>
       </View>
     </SafeAreaView>
   );

@@ -3,7 +3,8 @@ import React from "react";
 import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 
-import NewGameScreen from "./screens/NewGameScreen";
+
+import NewGameStackNavigator from "./navigation/NewGameStackNavigator";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -15,5 +16,5 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <NewGameScreen />;
+  return <NewGameStackNavigator />;
 }

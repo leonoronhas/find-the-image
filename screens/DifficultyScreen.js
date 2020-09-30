@@ -8,7 +8,7 @@ import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultButton from "../components/DefaultButton";
 
-const DifficultyScreen = () => {
+const DifficultyScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />
@@ -50,7 +50,12 @@ const DifficultyScreen = () => {
         </View>
       </View>
       <View style={styles.doneContainer}>
-        <DefaultButton style={styles.done}>DONE!</DefaultButton>
+        <DefaultButton
+          style={styles.done}
+          onPress={() => navigation.navigate("NewGameScreen")}
+        >
+          DONE!
+        </DefaultButton>
       </View>
     </SafeAreaView>
   );
