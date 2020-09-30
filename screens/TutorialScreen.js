@@ -8,7 +8,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import { scale, verticalScale } from "react-native-size-matters";
 import Swiper from "react-native-swiper";
 
-const TutorialScreen = () => {
+const TutorialScreen = ({ navigation }) => {
   return (
     <Swiper
       style={styles.wrapper}
@@ -82,7 +82,9 @@ const TutorialScreen = () => {
           </DefaultTitleText>
         </View>
         <View style={styles.readyContainer}>
-          <DefaultButton>I'M READY!</DefaultButton>
+          <DefaultButton onPress={() => navigation.navigate("HomeScreen")}>
+            I'M READY!
+          </DefaultButton>
         </View>
       </View>
     </Swiper>
@@ -167,9 +169,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  readyContainer:{
-      flex: 1,
-  }
+  readyContainer: {
+    flex: 1,
+  },
 });
 
 export default TutorialScreen;
