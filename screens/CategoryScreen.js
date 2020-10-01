@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { View, StyleSheet, SafeAreaView, StatusBar, Text } from "react-native";
-import { scale } from "react-native-size-matters";
+import { scale, verticalScale } from "react-native-size-matters";
 
 import Color from "../constants/colors";
 import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultButton from "../components/DefaultButton";
+import DefaultDoneButton from "../components/DefaultDoneButton";
 
 const CategoryScreen = ({ navigation }) => {
-  const [categoryOption, setCategoryOption] = useState("random");
+  const [selected, setSelected] = useState(false);
+  const [id, setId] = useState("");
 
-  const handleOption = (category) => {
-    setCategoryOption(category);
-    console.log(categoryOption);
+  const handleOption = (id) => {
+    setId(id);
+    setSelected(!selected);
   };
 
   return (
@@ -21,33 +23,85 @@ const CategoryScreen = ({ navigation }) => {
         <DefaultTitleText>Choose category:</DefaultTitleText>
       </View>
       <View style={styles.categoryContainer}>
-        <DefaultButton style={{ marginVertical: 10 }}>
+        <DefaultButton
+          style={
+            selected && id === "Roman"
+              ? styles.activeOption
+              : styles.inactiveOption
+          }
+          onPress={() => {
+            handleOption("Roman");
+          }}
+        >
           <Text style={styles.buttonTextColor}>ROMAN</Text>
         </DefaultButton>
-        <DefaultButton>
+        <DefaultButton
+          style={
+            selected && id === "Decimal"
+              ? styles.activeOption
+              : styles.inactiveOption
+          }
+          onPress={() => {
+            handleOption("Decimal");
+          }}
+        >
           <Text style={styles.buttonTextColor}>DECIMAL</Text>
         </DefaultButton>
-        <DefaultButton>
+        <DefaultButton
+          style={
+            selected && id === "Binary"
+              ? styles.activeOption
+              : styles.inactiveOption
+          }
+          onPress={() => {
+            handleOption("Binary");
+          }}
+        >
           <Text style={styles.buttonTextColor}>BINARY</Text>
         </DefaultButton>
-        <DefaultButton>
+        <DefaultButton
+          style={
+            selected && id === "Hexadecimal"
+              ? styles.activeOption
+              : styles.inactiveOption
+          }
+          onPress={() => {
+            handleOption("Hexadecimal");
+          }}
+        >
           <Text style={styles.buttonTextColor}>HEXADECIMAL</Text>
         </DefaultButton>
-        <DefaultButton>
+        <DefaultButton
+          style={
+            selected && id === "Percent"
+              ? styles.activeOption
+              : styles.inactiveOption
+          }
+          onPress={() => {
+            handleOption("Percent");
+          }}
+        >
           <Text style={styles.buttonTextColor}>PERCENT</Text>
         </DefaultButton>
-        <DefaultButton>
+        <DefaultButton
+          style={
+            selected && id === "Currency"
+              ? styles.activeOption
+              : styles.inactiveOption
+          }
+          onPress={() => {
+            handleOption("Currency");
+          }}
+        >
           <Text style={styles.buttonTextColor}>CURRENCY</Text>
         </DefaultButton>
       </View>
       <View style={styles.doneContainer}>
         <DefaultButton style={styles.random}>RANDOM</DefaultButton>
-        <DefaultButton
+        <DefaultDoneButton
           style={styles.done}
           onPress={() => navigation.navigate("NewGameScreen")}
-        >
-          DONE!
-        </DefaultButton>
+        ></DefaultDoneButton>
       </View>
     </SafeAreaView>
   );
@@ -62,9 +116,8 @@ const styles = StyleSheet.create({
   categoryContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-around",
-    alignItems: "center",
-    marginVertical: 20,
+    justifyContent: "space-evenly",
+    height: verticalScale(150),
   },
   options: {
     alignItems: "center",
@@ -92,9 +145,11 @@ const styles = StyleSheet.create({
   },
   activeOption: {
     backgroundColor: "#686C62",
+    marginBottom: 20,
   },
   inactiveOption: {
     backgroundColor: "white",
+    marginBottom: 20,
   },
 });
 
