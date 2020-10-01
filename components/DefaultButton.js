@@ -10,6 +10,7 @@ const DefaultButton = (props) => {
       onPress={props.onPress}
       style={{ ...styles.button, ...props.style }}
       activeOpacity={0.8}
+      id={props.id}
     >
       <Text style={styles.buttonText}>{props.children}</Text>
     </TouchableOpacity>
