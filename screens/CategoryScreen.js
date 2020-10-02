@@ -7,13 +7,14 @@ import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultButton from "../components/DefaultButton";
 import DefaultDoneButton from "../components/DefaultDoneButton";
 
-const CategoryScreen = ({ navigation }) => {
-  const [selected, setSelected] = useState(false);
-  const [id, setId] = useState("");
+import {setOption } from "../data/categoryOption";
 
-  const handleOption = (id) => {
-    setId(id);
-    setSelected(!selected);
+const CategoryScreen = ({ navigation }) => {
+  const [selected, setSelected] = useState("");
+
+  const handleOption = (option) => {
+    setSelected(option);
+    setOption(option);
   };
 
   return (
@@ -25,9 +26,7 @@ const CategoryScreen = ({ navigation }) => {
       <View style={styles.categoryContainer}>
         <DefaultButton
           style={
-            selected && id === "Roman"
-              ? styles.activeOption
-              : styles.inactiveOption
+            selected === "Roman" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
             handleOption("Roman");
@@ -37,9 +36,7 @@ const CategoryScreen = ({ navigation }) => {
         </DefaultButton>
         <DefaultButton
           style={
-            selected && id === "Decimal"
-              ? styles.activeOption
-              : styles.inactiveOption
+            selected === "Decimal" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
             handleOption("Decimal");
@@ -49,9 +46,7 @@ const CategoryScreen = ({ navigation }) => {
         </DefaultButton>
         <DefaultButton
           style={
-            selected && id === "Binary"
-              ? styles.activeOption
-              : styles.inactiveOption
+            selected === "Binary" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
             handleOption("Binary");
@@ -61,7 +56,7 @@ const CategoryScreen = ({ navigation }) => {
         </DefaultButton>
         <DefaultButton
           style={
-            selected && id === "Hexadecimal"
+            selected === "Hexadecimal"
               ? styles.activeOption
               : styles.inactiveOption
           }
@@ -73,9 +68,7 @@ const CategoryScreen = ({ navigation }) => {
         </DefaultButton>
         <DefaultButton
           style={
-            selected && id === "Percent"
-              ? styles.activeOption
-              : styles.inactiveOption
+            selected === "Percent" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
             handleOption("Percent");
@@ -85,7 +78,7 @@ const CategoryScreen = ({ navigation }) => {
         </DefaultButton>
         <DefaultButton
           style={
-            selected && id === "Currency"
+            selected === "Currency"
               ? styles.activeOption
               : styles.inactiveOption
           }

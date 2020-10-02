@@ -8,7 +8,11 @@ import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultButton from "../components/DefaultButton";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
+import {getOption} from '../data/categoryOption';
+
 const NewGameScreen = ({ navigation }) => {
+  const category = getOption();
+  console.log(category)
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />
@@ -18,7 +22,7 @@ const NewGameScreen = ({ navigation }) => {
             CHOOSE CATEGORY:
           </DefaultBodyText>
           <DefaultButton onPress={() => navigation.navigate("CategoryScreen")}>
-            CATEGORY
+            {category ? category : "CATEGORY"}
           </DefaultButton>
         </View>
         <View style={styles.options}>
