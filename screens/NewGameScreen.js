@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, StyleSheet, StatusBar, SafeAreaView } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
+import { EventRegister } from "react-native-event-listeners";
 
 import Color from "../constants/colors";
 import DefaultBodyText from "../components/DefaultBodyText";
@@ -8,11 +9,21 @@ import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultButton from "../components/DefaultButton";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
-import {getOption} from '../data/categoryOption';
+import { getOption } from "../data/categoryOption";
 
 const NewGameScreen = ({ navigation }) => {
-  const category = getOption();
-  console.log(category)
+  const [category, setCategory] = useState(getOption());
+
+  useEffect(() => {
+    const myListener = EventRegister.addEventListener("setOption", (option) => {
+      setCategory(option);
+    });
+
+    return () => {
+      EventRegister.removeEventListener(myListener);
+    };
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />

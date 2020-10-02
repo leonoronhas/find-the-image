@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, SafeAreaView, StatusBar, Text } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
+import { EventRegister } from 'react-native-event-listeners'
 
 import Color from "../constants/colors";
 import DefaultTitleText from "../components/DefaultTitleText";
@@ -15,6 +16,7 @@ const CategoryScreen = ({ navigation }) => {
   const handleOption = (option) => {
     setSelected(option);
     setOption(option);
+    EventRegister.emit('setOption', option);
   };
 
   return (
@@ -26,64 +28,64 @@ const CategoryScreen = ({ navigation }) => {
       <View style={styles.categoryContainer}>
         <DefaultButton
           style={
-            selected === "Roman" ? styles.activeOption : styles.inactiveOption
+            selected === "ROMAN" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
-            handleOption("Roman");
+            handleOption("ROMAN");
           }}
         >
           <Text style={styles.buttonTextColor}>ROMAN</Text>
         </DefaultButton>
         <DefaultButton
           style={
-            selected === "Decimal" ? styles.activeOption : styles.inactiveOption
+            selected === "DECIMAL" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
-            handleOption("Decimal");
+            handleOption("DECIMAL");
           }}
         >
           <Text style={styles.buttonTextColor}>DECIMAL</Text>
         </DefaultButton>
         <DefaultButton
           style={
-            selected === "Binary" ? styles.activeOption : styles.inactiveOption
+            selected === "BINARY" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
-            handleOption("Binary");
+            handleOption("BINARY");
           }}
         >
           <Text style={styles.buttonTextColor}>BINARY</Text>
         </DefaultButton>
         <DefaultButton
           style={
-            selected === "Hexadecimal"
+            selected === "HEXADECIMAL"
               ? styles.activeOption
               : styles.inactiveOption
           }
           onPress={() => {
-            handleOption("Hexadecimal");
+            handleOption("HEXADECIMAL");
           }}
         >
           <Text style={styles.buttonTextColor}>HEXADECIMAL</Text>
         </DefaultButton>
         <DefaultButton
           style={
-            selected === "Percent" ? styles.activeOption : styles.inactiveOption
+            selected === "PERCENT" ? styles.activeOption : styles.inactiveOption
           }
           onPress={() => {
-            handleOption("Percent");
+            handleOption("PERCENT");
           }}
         >
           <Text style={styles.buttonTextColor}>PERCENT</Text>
         </DefaultButton>
         <DefaultButton
           style={
-            selected === "Currency"
+            selected === "CURRENCY"
               ? styles.activeOption
               : styles.inactiveOption
           }
           onPress={() => {
-            handleOption("Currency");
+            handleOption("CURRENCY");
           }}
         >
           <Text style={styles.buttonTextColor}>CURRENCY</Text>
