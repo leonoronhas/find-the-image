@@ -8,10 +8,13 @@ import CountDown from "react-native-countdown-component";
 import Color from "../constants/colors";
 import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultTitleText from "../components/DefaultTitleText";
+import { getNumber } from "../data/number";
 
 const BeforeGameScreen = ({ navigation }) => {
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(getNumber());
   const [level, setLevel] = useState(1);
+
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -21,7 +24,7 @@ const BeforeGameScreen = ({ navigation }) => {
           Match this number!
         </DefaultTitleText>
         <View style={styles.numberContainer}>
-          <DefaultBodyText>{number}</DefaultBodyText>
+          <DefaultBodyText style={styles.numberText}>{number}</DefaultBodyText>
         </View>
       </View>
       <Divider />
@@ -97,6 +100,9 @@ const styles = StyleSheet.create({
   countdownNumber: {
     fontSize: RFPercentage(8),
   },
+  numberText:{
+    fontSize: RFPercentage(6),
+  }
 });
 
 export default BeforeGameScreen;

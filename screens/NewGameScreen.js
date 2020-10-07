@@ -11,15 +11,47 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 
 import { getOption } from "../data/categoryOption";
 import { getDifficultyOption } from "../data/difficultyOption";
+import {
+  convertToRoman,
+  convertToHex,
+  generateDecimal,
+  convertToBinary,
+  convertToPercent,
+  convertToCurrency,
+  getNumber,
+  randomIntFromInterval
+} from "../data/number";
 
 const NewGameScreen = ({ navigation }) => {
   const [category, setCategory] = useState(getOption());
   const [difficulty, setDifficulty] = useState(getDifficultyOption());
+  const [number, setNumber] = useState("");
 
   useEffect(() => {
     const myListener = EventRegister.addEventListener("setOption", (option) => {
       setCategory(option);
     });
+
+    // TESTING CATEGORY CONVERSIONS
+    let tst = getNumber(category);
+    let roman = convertToRoman(tst);
+    let decimal = generateDecimal(tst);
+    let hexNumber = convertToHex(tst);
+    let binary = convertToBinary(tst);
+    let percent = convertToPercent(tst);
+    let currency = convertToCurrency(tst);
+    let testing = randomIntFromInterval(50, 100);
+
+    console.log('Testing is '+ testing);
+
+    // console.log(`${tst} in Roman is -> ` + roman);
+    // console.log(`${tst} in Decimal is -> ` + decimal);
+    // console.log(`${tst} in Hexadecimal is -> ` + hexNumber);
+    // console.log(`${tst} in Binary is -> ` + binary);
+    // console.log(`${tst} in Percent is -> ` + percent);
+    // console.log(`${tst} in Currency is -> ` + currency);
+    // console.log(`Tst is -> ` + tst+ "\n");
+
     const myDifficultyListener = EventRegister.addEventListener(
       "setDifficultyOption",
       (option) => {
@@ -31,7 +63,7 @@ const NewGameScreen = ({ navigation }) => {
       EventRegister.removeEventListener(myListener);
       EventRegister.removeEventListener(myDifficultyListener);
     };
-  }, []);
+  }, [category, difficulty]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -85,7 +117,7 @@ const NewGameScreen = ({ navigation }) => {
                 ]
               );
             } else {
-              navigation.navigate("BeforeGameScreen");
+              navigation.push("BeforeGameScreen");
             }
           }}
         >

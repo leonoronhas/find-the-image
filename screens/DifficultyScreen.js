@@ -37,7 +37,7 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("EASY")}
           >
             <DefaultBodyText style={styles.difficultyEasyText}>
-              EASY{"      "}
+              EASY{"    "}
               <DefaultBodyText style={styles.difficultyEasyText2}>
                 30 seconds 40 numbers
               </DefaultBodyText>
@@ -52,7 +52,7 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("MEDIUM")}
           >
             <DefaultBodyText style={styles.difficultyMediumText}>
-              MEDIUM{"      "}
+              MEDIUM{"    "}
               <DefaultBodyText style={styles.difficultyMediumText2}>
                 30 seconds 60 numbers
               </DefaultBodyText>
@@ -67,7 +67,7 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("HARD")}
           >
             <DefaultBodyText style={styles.difficultyHardText}>
-              HARD{"      "}
+              HARD{"    "}
               <DefaultBodyText style={styles.difficultyHardText2}>
                 20 seconds 80 numbers
               </DefaultBodyText>
