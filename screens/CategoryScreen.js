@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { View, StyleSheet, SafeAreaView, StatusBar, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  SafeAreaView,
+  StatusBar,
+  Text,
+  Alert,
+} from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
-import { EventRegister } from 'react-native-event-listeners'
+import { EventRegister } from "react-native-event-listeners";
 
 import Color from "../constants/colors";
 import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultButton from "../components/DefaultButton";
 import DefaultDoneButton from "../components/DefaultDoneButton";
 
-import {setOption } from "../data/categoryOption";
+import { setOption } from "../data/categoryOption";
 
 const CategoryScreen = ({ navigation }) => {
   const [selected, setSelected] = useState("");
@@ -16,7 +23,22 @@ const CategoryScreen = ({ navigation }) => {
   const handleOption = (option) => {
     setSelected(option);
     setOption(option);
-    EventRegister.emit('setOption', option);
+    EventRegister.emit("setOption", option);
+  };
+
+  const randomize = () => {
+    let options = [
+      "ROMAN",
+      "DECIMAL",
+      "HEXADECIMAL",
+      "BINARY",
+      "PERCENT",
+      "CURRENCY",
+    ];
+
+    let randomOptionNumber = Math.floor(Math.random() * options.length);
+    let randomOption = options[randomOptionNumber];
+    handleOption(randomOption);
   };
 
   return (
@@ -92,10 +114,32 @@ const CategoryScreen = ({ navigation }) => {
         </DefaultButton>
       </View>
       <View style={styles.doneContainer}>
-        <DefaultButton style={styles.random}>RANDOM</DefaultButton>
+        <DefaultButton
+          style={selected === "RANDOM" ? styles.activeOption : styles.random}
+          onPress={randomize}
+        >
+          RANDOM
+        </DefaultButton>
         <DefaultDoneButton
           style={styles.done}
-          onPress={() => navigation.navigate("NewGameScreen")}
+          onPress={() => {
+            if (selected === "") {
+              Alert.alert(
+                "Please choose a category!",
+                "This will help you see if you have what it takes 😉",
+                [
+                  {
+                    text: "Not ready yet...",
+                    onPress: () => navigation.navigate("NewGameScreen"),
+                    style: "cancel",
+                  },
+                  { text: "sounds good", style: "default" },
+                ]
+              );
+            } else {
+              navigation.navigate("NewGameScreen");
+            }
+          }}
         ></DefaultDoneButton>
       </View>
     </SafeAreaView>
@@ -135,11 +179,14 @@ const styles = StyleSheet.create({
   random: {
     backgroundColor: Color.accent,
   },
+  activeRandomOption: {
+    backgroundColor: Color.danger,
+  },
   buttonTextColor: {
     color: Color.warning,
   },
   activeOption: {
-    backgroundColor: "#686C62",
+    backgroundColor: Color.accent,
     marginBottom: 20,
   },
   inactiveOption: {

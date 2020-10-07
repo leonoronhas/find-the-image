@@ -23,16 +23,6 @@ const HomeScreen = ({ navigation }) => (
         <Text style={styles.buttonText}>NEW GAME</Text>
       </DefaultButton>
     </View>
-    <View
-      style={{
-        alignItems: "center",
-        marginVertical: 20,
-      }}
-    >
-      <DefaultButton style={styles.quit}>
-        <Text style={styles.buttonText2}>QUIT GAME</Text>
-      </DefaultButton>
-    </View>
   </SafeAreaView>
 );
 
@@ -48,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   buttonContainer: {
-    flex: 0.5,
+    flex: 1.2,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
@@ -64,12 +54,7 @@ const styles = StyleSheet.create({
   },
   record: {
     backgroundColor: Color.accent,
-  },
-  quit: {
-    backgroundColor: Color.danger,
-    width: scale(170),
-    height: verticalScale(50),
-  },
+  }
 });
 
 export default HomeScreen;

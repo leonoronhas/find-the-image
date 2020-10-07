@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, StatusBar, SafeAreaView } from "react-native";
+import { View, StyleSheet, StatusBar, SafeAreaView, Alert } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 import { EventRegister } from "react-native-event-listeners";
 
@@ -10,17 +10,26 @@ import DefaultButton from "../components/DefaultButton";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 import { getOption } from "../data/categoryOption";
+import { getDifficultyOption } from "../data/difficultyOption";
 
 const NewGameScreen = ({ navigation }) => {
   const [category, setCategory] = useState(getOption());
+  const [difficulty, setDifficulty] = useState(getDifficultyOption());
 
   useEffect(() => {
     const myListener = EventRegister.addEventListener("setOption", (option) => {
       setCategory(option);
     });
+    const myDifficultyListener = EventRegister.addEventListener(
+      "setDifficultyOption",
+      (option) => {
+        setDifficulty(option);
+      }
+    );
 
     return () => {
       EventRegister.removeEventListener(myListener);
+      EventRegister.removeEventListener(myDifficultyListener);
     };
   }, []);
 
@@ -43,7 +52,7 @@ const NewGameScreen = ({ navigation }) => {
           <DefaultButton
             onPress={() => navigation.navigate("DifficultyScreen")}
           >
-            DIFFICULTY
+            {difficulty ? difficulty : "DIFFICULTY"}
           </DefaultButton>
         </View>
       </View>
@@ -59,7 +68,26 @@ const NewGameScreen = ({ navigation }) => {
         </DefaultButton>
         <DefaultButton
           style={styles.ready}
-          onPress={() => navigation.navigate("BeforeGameScreen")}
+          onPress={() => {
+            if (category === "" && difficulty === "") {
+              Alert.alert(
+                "Please choose a category and difficulty!",
+                "That way you are setting yourself to success! 😉",
+                [
+                  {
+                    text: "Not ready yet...",
+                    onPress: () => {
+                      navigation.navigate("NewGameScreen");
+                    },
+                    style: "cancel",
+                  },
+                  { text: "sounds good", style: "default" },
+                ]
+              );
+            } else {
+              navigation.navigate("BeforeGameScreen");
+            }
+          }}
         >
           I'M READY!
         </DefaultButton>

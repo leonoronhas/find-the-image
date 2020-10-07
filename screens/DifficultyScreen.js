@@ -1,14 +1,25 @@
-import React from "react";
-import { View, StyleSheet, SafeAreaView, StatusBar } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, SafeAreaView, StatusBar, Alert } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 import { RFPercentage } from "react-native-responsive-fontsize";
+import { EventRegister } from "react-native-event-listeners";
 
 import Color from "../constants/colors";
 import DefaultTitleText from "../components/DefaultTitleText";
 import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultButton from "../components/DefaultButton";
+import DefaultDoneButton from "../components/DefaultDoneButton";
+
+import { setDifficultyOption } from "../data/difficultyOption";
 
 const DifficultyScreen = ({ navigation }) => {
+  const [selected, setSelected] = useState("");
+
+  const handleOption = (option) => {
+    setSelected(option);
+    setDifficultyOption(option);
+    EventRegister.emit("setDifficultyOption", option);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />
@@ -19,7 +30,12 @@ const DifficultyScreen = ({ navigation }) => {
       </View>
       <View style={styles.difficultyContainer}>
         <View style={styles.options}>
-          <DefaultButton style={styles.buttonOption}>
+          <DefaultButton
+            style={
+              selected === "EASY" ? styles.activeStyle : styles.buttonOption
+            }
+            onPress={() => handleOption("EASY")}
+          >
             <DefaultBodyText style={styles.difficultyEasyText}>
               EASY{"      "}
               <DefaultBodyText style={styles.difficultyEasyText2}>
@@ -29,7 +45,12 @@ const DifficultyScreen = ({ navigation }) => {
           </DefaultButton>
         </View>
         <View style={styles.options}>
-          <DefaultButton style={styles.buttonOption}>
+          <DefaultButton
+            style={
+              selected === "MEDIUM" ? styles.activeStyle : styles.buttonOption
+            }
+            onPress={() => handleOption("MEDIUM")}
+          >
             <DefaultBodyText style={styles.difficultyMediumText}>
               MEDIUM{"      "}
               <DefaultBodyText style={styles.difficultyMediumText2}>
@@ -39,7 +60,12 @@ const DifficultyScreen = ({ navigation }) => {
           </DefaultButton>
         </View>
         <View style={styles.options}>
-          <DefaultButton style={styles.buttonOption}>
+          <DefaultButton
+            style={
+              selected === "HARD" ? styles.activeStyle : styles.buttonOption
+            }
+            onPress={() => handleOption("HARD")}
+          >
             <DefaultBodyText style={styles.difficultyHardText}>
               HARD{"      "}
               <DefaultBodyText style={styles.difficultyHardText2}>
@@ -50,12 +76,31 @@ const DifficultyScreen = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.doneContainer}>
-        <DefaultButton
+        <DefaultDoneButton
           style={styles.done}
-          onPress={() => navigation.navigate("NewGameScreen")}
-        >
-          DONE!
-        </DefaultButton>
+          onPress={() => {
+            if (selected === "") {
+              Alert.alert(
+                "Please choose a difficulty!",
+                "You can always change it later 😉",
+                [
+                  {
+                    text: "Not ready yet...",
+                    onPress: () => {
+                      setSelected("");
+                      setDifficultyOption("");
+                      navigation.navigate("NewGameScreen");
+                    },
+                    style: "cancel",
+                  },
+                  { text: "sounds good", style: "default" },
+                ]
+              );
+            } else {
+              navigation.navigate("NewGameScreen");
+            }
+          }}
+        ></DefaultDoneButton>
       </View>
     </SafeAreaView>
   );
@@ -94,6 +139,11 @@ const styles = StyleSheet.create({
     width: scale(160),
     height: verticalScale(140),
     backgroundColor: "white",
+  },
+  activeStyle: {
+    width: scale(160),
+    height: verticalScale(140),
+    backgroundColor: Color.accent,
   },
   difficultyEasyText: {
     fontSize: RFPercentage(4),
