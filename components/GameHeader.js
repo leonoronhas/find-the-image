@@ -5,14 +5,17 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import { FontAwesome5 } from "@expo/vector-icons";
 import CountDown from "react-native-countdown-component";
 
-import { getDifficultyOption } from "../data/difficultyOption";
+import { getDifficultyOption, timeHandler } from "../data/difficultyOption";
+import { getOption } from "../data/categoryOption";
+
 
 import Color from "../constants/colors";
 import DefaultBodyText from "../components/DefaultBodyText";
 
 const GameHeader = (props) => {
   const [difficulty, setDifficulty] = useState(getDifficultyOption());
-  const [attempts, setAttempts] = useState(10);
+  const [category, setCategory] = useState(getOption());
+  const [time, setTime] = useState(timeHandler());  
 
   return (
     <View style={styles.headerContainer}>
@@ -22,37 +25,38 @@ const GameHeader = (props) => {
           styles={styles.homeButton}
           activeOpacity={0.8}
         >
-          <FontAwesome5 name="home" size={30} color={Color.warning} />
+          <FontAwesome5 name="home" size={25} color={Color.danger} />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={props.onPress}
+          onPress={props.onPressEye}
           styles={styles.homeButton}
           activeOpacity={0.8}
         >
-          <FontAwesome5 name="eye" size={30} color={Color.warning} />
+          <FontAwesome5 name="eye" size={25} color={Color.danger} />
         </TouchableOpacity>
       </View>
       <View style={styles.textContainer}>
         <DefaultBodyText style={styles.text}>
-          Difficulty:
+          Difficulty:{" "}
           <DefaultBodyText style={styles.text}>{difficulty}</DefaultBodyText>
         </DefaultBodyText>
         <DefaultBodyText style={styles.text}>
-          Attempts:
-          <DefaultBodyText style={styles.text}>{attempts}</DefaultBodyText>
+          Category:{" "}
+          <DefaultBodyText style={styles.text}>{category}</DefaultBodyText>
         </DefaultBodyText>
       </View>
       <View style={styles.countdownContainer}>
         <DefaultBodyText style={styles.countdownText}>Time:</DefaultBodyText>
         <CountDown
-          until={30}
-          onFinish={() => alert("hello")}
+          until={time}
+          onFinish={() => alert("TIMES UP!!")}
           size={20}
           timeToShow={["S"]}
           timeLabels={{ s: null }}
           digitStyle={{ backgroundColor: "transparent" }}
           digitTxtStyle={{ color: Color.done }}
         />
+        {()=>console.log(time)}
       </View>
     </View>
   );
@@ -102,6 +106,7 @@ const styles = StyleSheet.create({
     height: verticalScale(40),
     width: scale(370),
   },
+  
 });
 
 export default GameHeader;
