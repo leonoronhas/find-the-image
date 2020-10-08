@@ -16,6 +16,8 @@ import DefaultButton from "../components/DefaultButton";
 import DefaultDoneButton from "../components/DefaultDoneButton";
 
 import { setOption } from "../data/categoryOption";
+import { setChosenNumber, getChosenNumber } from "../data/chosenNumber";
+import { randomIntFromInterval, getNumber } from "../data/number";
 
 const CategoryScreen = ({ navigation }) => {
   const [selected, setSelected] = useState("");
@@ -23,6 +25,9 @@ const CategoryScreen = ({ navigation }) => {
   const handleOption = (option) => {
     setSelected(option);
     setOption(option);
+    let random = randomIntFromInterval(100, 500);
+    setChosenNumber(getNumber(option, random));
+    console.log("ChosenNumber in category screen is " + getChosenNumber())
     EventRegister.emit("setOption", option);
   };
 
