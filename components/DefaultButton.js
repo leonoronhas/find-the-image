@@ -12,7 +12,9 @@ const DefaultButton = (props) => {
       activeOpacity={0.8}
       id={props.id}
     >
-      <Text style={styles.buttonText}>{props.children}</Text>
+      <Text style={styles.buttonText} allowFontScaling={false}>
+        {props.children}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     // Elevation props Android only
     elevation: 8,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 15,
     borderRadius: 20,
     width: scale(190),
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     color: Color.danger,
     fontFamily: "openSansBold",
     fontSize: RFPercentage(2.5),
-    textAlign: 'center'
+    textAlign: "center",
   },
 });
 

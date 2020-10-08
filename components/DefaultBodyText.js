@@ -7,7 +7,9 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 = custom fonts for all body texts
 =============================================== */
 const DefaultBodyText = (props) => (
-  <Text style={{ ...styles.body, ...props.style }}>{props.children}</Text>
+  <Text style={{ ...styles.body, ...props.style }} allowFontScaling={false}>
+    {props.children}
+  </Text>
 );
 
 const styles = StyleSheet.create({
@@ -15,7 +17,7 @@ const styles = StyleSheet.create({
     fontFamily: "openSans",
     fontSize: RFPercentage(4),
     textAlign: "center",
-    color:  "white",
+    color: "white",
   },
 });
 
