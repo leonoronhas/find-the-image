@@ -37,9 +37,9 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("EASY")}
           >
             <DefaultBodyText style={styles.difficultyEasyText}>
-              EASY{"    "}
+              EASY{"        "}
               <DefaultBodyText style={styles.difficultyEasyText2}>
-                30 seconds 40 numbers
+                30 seconds {"        "}40 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>
@@ -52,9 +52,9 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("MEDIUM")}
           >
             <DefaultBodyText style={styles.difficultyMediumText}>
-              MEDIUM{"    "}
+              MEDIUM{"      "}
               <DefaultBodyText style={styles.difficultyMediumText2}>
-                30 seconds 60 numbers
+                30 seconds {"      "}60 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>
@@ -67,9 +67,9 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("HARD")}
           >
             <DefaultBodyText style={styles.difficultyHardText}>
-              HARD{"    "}
+              HARD{"        "}
               <DefaultBodyText style={styles.difficultyHardText2}>
-                20 seconds 80 numbers
+                20 seconds{"         "}80 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>
@@ -136,13 +136,13 @@ const styles = StyleSheet.create({
     fontSize: RFPercentage(8),
   },
   buttonOption: {
-    width: scale(160),
+    width: scale(180),
     height: verticalScale(140),
     backgroundColor: "white",
   },
   activeStyle: {
-    width: scale(160),
-    height: verticalScale(140),
+    width: scale(190),
+    height: verticalScale(150),
     backgroundColor: Color.accent,
   },
   difficultyEasyText: {
