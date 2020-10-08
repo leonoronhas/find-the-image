@@ -7,3 +7,12 @@ export const setDifficultyOption = (value) => {
 export const getDifficultyOption = () => {
   return difficultyOption;
 };
+
+export const timeHandler = () => {
+  if (difficultyOption === "HARD") {
+    time = 21;
+  } else {
+    time = 31;
+  }
+  return time;
+};
