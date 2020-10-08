@@ -14,7 +14,7 @@ const DefaultDoneButton = (props) => {
       id={props.id}
     >
       <View>
-        <MaterialIcons name="done" size={50} color={Color.done} />
+        <MaterialIcons name="done" size={40} color={Color.done} />
       </View>
     </TouchableOpacity>
   );
