@@ -82,7 +82,7 @@ const TutorialScreen = ({ navigation }) => {
           </DefaultTitleText>
         </View>
         <View style={styles.readyContainer}>
-          <DefaultButton onPress={() => navigation.navigate("HomeScreen")}>
+          <DefaultButton onPress={() => navigation.navigate("NewGameStack", {screen: "HomeScreen"})}>
             I'M READY!
           </DefaultButton>
         </View>

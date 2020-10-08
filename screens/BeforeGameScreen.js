@@ -8,13 +8,11 @@ import CountDown from "react-native-countdown-component";
 import Color from "../constants/colors";
 import DefaultBodyText from "../components/DefaultBodyText";
 import DefaultTitleText from "../components/DefaultTitleText";
-import { getNumber } from "../data/number";
+import { getChosenNumber } from "../data/chosenNumber";
 
 const BeforeGameScreen = ({ navigation }) => {
-  const [number, setNumber] = useState(getNumber());
+  const [number, setNumber] = useState(getChosenNumber());
   const [level, setLevel] = useState(1);
-
-  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,14 +32,15 @@ const BeforeGameScreen = ({ navigation }) => {
             Level <DefaultTitleText>{level}</DefaultTitleText>
           </DefaultTitleText>
         </View>
-        <DefaultBodyText>Good luck!</DefaultBodyText>
         <View style={styles.countdownContainer}>
           <DefaultBodyText style={styles.countdownText}>
             Your game starts in{" "}
           </DefaultBodyText>
           <CountDown
             until={10}
-            onFinish={() => alert("hello")}
+            onFinish={() =>
+              navigation.push("GameStack", { screen: "GameScreen" })
+            }
             size={25}
             timeToShow={["S"]}
             timeLabels={{ s: null }}
@@ -100,9 +99,9 @@ const styles = StyleSheet.create({
   countdownNumber: {
     fontSize: RFPercentage(8),
   },
-  numberText:{
+  numberText: {
     fontSize: RFPercentage(6),
-  }
+  },
 });
 
 export default BeforeGameScreen;

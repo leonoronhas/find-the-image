@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet, SafeAreaView, StatusBar, Text } from "react-native";
-import { scale, verticalScale } from "react-native-size-matters";
 
 import Color from "../constants/colors";
 import DefaultTitleText from "../components/DefaultTitleText";
@@ -18,7 +17,9 @@ const HomeScreen = ({ navigation }) => (
       </DefaultButton>
       <DefaultButton
         style={styles.newGame}
-        onPress={() => navigation.navigate("NewGameScreen")}
+        onPress={() =>
+          navigation.navigate("NewGameStack", { screen: "NewGameScreen" })
+        }
       >
         <Text style={styles.buttonText}>NEW GAME</Text>
       </DefaultButton>
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
   },
   record: {
     backgroundColor: Color.accent,
-  }
+  },
 });
 
 export default HomeScreen;
