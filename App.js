@@ -4,7 +4,8 @@ import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 
 
-import NewGameStackNavigator from "./navigation/NewGameStackNavigator";
+import GameScreen from "./screens/GameScreen";
+import MainNavigator from "./navigation/MainNavigator";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -16,5 +17,5 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <NewGameStackNavigator />;
+  return <MainNavigator />;
 }
