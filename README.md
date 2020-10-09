@@ -8,6 +8,9 @@ Coming soon!
 ### Screenshots
 Coming soon!
 
+### Platform
+Android | iOS
+
 ### Languages | Tools
 Built using Javascript ECMAScript 6, [React Native](https://reactnative.dev/), [Expo](https://expo.io/), JSX, and npm
 
