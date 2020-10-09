@@ -3,6 +3,11 @@
 ## Objective
 Test your ability to focus, and find the correct number amongst several similar numbers within a time period. Do you consider yourself attentive and accurate? Are you sure you can find THE number before the time runs out? That are some of the points and questions that you should be thinking when you try Match the Number game.
 
+### Demo
+Coming soon!
+### Screenshots
+Coming soon!
+
 ### Languages | Tools
 Built using Javascript ECMAScript 6, [React Native](https://reactnative.dev/), [Expo](https://expo.io/), JSX, and npm
 
@@ -17,6 +22,4 @@ Dependency | Description
 [React Native Size Matters](https://github.com/nirsky/react-native-size-matters) | A React-Native utility belt for scaling the size of your apps UI across different sized devices
 [React Native Swiper](https://github.com/leecade/react-native-swiper) | Swiper component for React Native
 
-### Demo
 
-### Screenshots
