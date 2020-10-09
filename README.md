@@ -6,15 +6,16 @@ Test your ability to focus, and find the correct number amongst several similar 
 ### Languages | Tools
 Built using Javascript ECMAScript 6, [React Native](https://reactnative.dev/), [Expo](https://expo.io/), JSX, and npm
 
-### Dependencies
-- [React Navigation 5](https://reactnavigation.org/)
-- [React Native Elements](https://reactnativeelements.com/)
-- [React Native Event Listeners](https://github.com/meinto/react-native-event-listeners#readme)
-- [React Native Modal](https://github.com/react-native-community/react-native-modal)
-- [React Native Responsive Font Size](https://github.com/heyman333/react-native-responsive-fontsize/blob/master/README.md)
-- [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
-- [React Native Size Matters](https://github.com/nirsky/react-native-size-matters)
-- [React Native Swiper](https://github.com/leecade/react-native-swiper)
+Dependency | Description
+-----------| -----------
+[React Navigation 5](https://reactnavigation.org/) | Routing and navigation for your React Native apps
+[React Native Elements](https://reactnativeelements.com/) | Cross Platform React Native UI Toolkit
+[React Native Event Listeners](https://github.com/meinto/react-native-event-listeners#readme) | A simple global event listener
+[React Native Modal](https://github.com/react-native-community/react-native-modal) | An enhanced, animated and customizable react-native modal
+[React Native Responsive Font Size](https://github.com/heyman333/react-native-responsive-fontsize/blob/master/README.md) | Responsive fontSize based on screen-size of the device in React-Native
+[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/) | React Native's Animated library reimplemented
+[React Native Size Matters](https://github.com/nirsky/react-native-size-matters) | A React-Native utility belt for scaling the size of your apps UI across different sized devices
+[React Native Swiper](https://github.com/leecade/react-native-swiper) | Swiper component for React Native
 
 ### Demo
 
