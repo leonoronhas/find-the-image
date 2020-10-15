@@ -37,9 +37,9 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("EASY")}
           >
             <DefaultBodyText style={styles.difficultyEasyText}>
-              EASY{"        "}
+              EASY{"           "}
               <DefaultBodyText style={styles.difficultyEasyText2}>
-                30 seconds {"        "}40 numbers
+                30 seconds {"           "}40 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>
@@ -67,9 +67,9 @@ const DifficultyScreen = ({ navigation }) => {
             onPress={() => handleOption("HARD")}
           >
             <DefaultBodyText style={styles.difficultyHardText}>
-              HARD{"        "}
+              HARD{"          "}
               <DefaultBodyText style={styles.difficultyHardText2}>
-                20 seconds{"         "}80 numbers
+                20 seconds{"           "}80 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>
