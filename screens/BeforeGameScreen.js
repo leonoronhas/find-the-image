@@ -38,10 +38,10 @@ const BeforeGameScreen = ({ navigation }) => {
           </DefaultBodyText>
           <CountDown
             until={10}
-            onFinish={() =>
+            onFinish={() => 
               navigation.push("GameStack", { screen: "GameScreen" })
             }
-            size={25}
+            size={30}
             timeToShow={["S"]}
             timeLabels={{ s: null }}
             digitStyle={{ backgroundColor: Color.danger }}
@@ -81,15 +81,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   levelContainer: {
-    height: verticalScale(150),
+    height: verticalScale(180),
     width: scale(250),
     flexDirection: "row",
     justifyContent: "space-around",
   },
   countdownContainer: {
-    height: verticalScale(100),
+    height: verticalScale(120),
     width: scale(250),
-    flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
   },
