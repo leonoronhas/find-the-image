@@ -6,7 +6,8 @@ Test your ability to focus, and find the correct number amongst several similar 
 ### Demo
 Coming soon!
 ### Screenshots
-Coming soon!
+
+![Welcome Screen](https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/welcomeScreen.png)
 
 ### Platform
 Android | iOS
