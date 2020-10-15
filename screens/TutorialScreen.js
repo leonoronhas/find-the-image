@@ -24,22 +24,22 @@ const TutorialScreen = ({ navigation }) => {
           </DefaultTitleText>
         </View>
         <View style={styles.buttonContainer}>
-          <DefaultButton style={{ marginBottom: 30 }}>
+          <DefaultButton style={{ marginBottom: 30 }} disabled>
             <Text style={styles.buttonText}>Roman</Text>
           </DefaultButton>
-          <DefaultButton>
+          <DefaultButton disabled>
             <Text style={styles.buttonText}>Decimals</Text>
           </DefaultButton>
-          <DefaultButton>
+          <DefaultButton disabled>
             <Text style={styles.buttonText}>Binary</Text>
           </DefaultButton>
-          <DefaultButton>
+          <DefaultButton disabled>
             <Text style={styles.buttonText}>Hexadecimal</Text>
           </DefaultButton>
-          <DefaultButton>
+          <DefaultButton disabled>
             <Text style={styles.buttonText}>Percent</Text>
           </DefaultButton>
-          <DefaultButton>
+          <DefaultButton disabled>
             <Text style={styles.buttonText}>More...</Text>
           </DefaultButton>
         </View>
@@ -52,21 +52,21 @@ const TutorialScreen = ({ navigation }) => {
           </DefaultTitleText>
         </View>
         <View style={styles.buttonContainer2}>
-          <DefaultButton style={styles.difficultyContainer}>
+          <DefaultButton style={styles.difficultyContainer} disabled>
             <Text style={styles.buttonText2Title}>EASY</Text>
             {"              "}
             <Text style={styles.buttonText2}>30 SECONDS</Text>
             {"              "}
             <Text style={styles.buttonText2}>40 NUMBERS</Text>
           </DefaultButton>
-          <DefaultButton style={styles.difficultyContainer}>
+          <DefaultButton style={styles.difficultyContainer} disabled>
             <Text style={styles.buttonText3Title}>MEDIUM</Text>
             {"              "}
             <Text style={styles.buttonText3}>30 SECONDS</Text>
             {"              "}
             <Text style={styles.buttonText3}>60 NUMBERS</Text>
           </DefaultButton>
-          <DefaultButton style={styles.difficultyContainer}>
+          <DefaultButton style={styles.difficultyContainer} disabled>
             <Text style={styles.buttonText4Title}>HARD</Text>
             {"              "}
             <Text style={styles.buttonText4}>20 SECONDS</Text>
