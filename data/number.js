@@ -1,9 +1,15 @@
-// Contains all the category conversions required to generate the number
+// NUMBER FUNCTIONS
+// SET CHOSEN NUMBER AND CONVERT IT BASED ON CATEGORY line: 12
+// NUMBER CONVERSIONS lines from 35 - 98
+// FILL UP ARRAY BASED ON CATEGORY line: 103
 
-let number = "";
-let arrayOfNumbers = [];
+let arrayOfNumbers = new Set();
 
-export const getNumber = (category) => {
+const EASY = 59;
+const MEDIUM = 89;
+const HARD = 119;
+
+export const getNumber = (category, number) => {
   let randomNumber = generateNumber();
   if (category === "ROMAN") {
     number = convertToRoman(randomNumber);
@@ -27,36 +33,35 @@ export const getNumber = (category) => {
   return number;
 };
 
-/* ROMAN Numbers
-Easy - Max 999 -> 6 Roman digits
-Medium - Max 1999 -> 7 Roman digits
-Hard - Max 2999 -> 8 Roman digits
-*/
-export const convertToRoman = (number) => {
-  let roman = {
-    M: 1000,
-    CM: 900,
-    D: 500,
-    CD: 400,
-    C: 100,
-    XC: 90,
-    L: 50,
-    XL: 40,
-    X: 10,
-    IX: 9,
-    V: 5,
-    IV: 4,
-    I: 1,
-  };
-  let romanString = "";
+/* ROMAN Numbers */
+export const convertToRoman = function (num) {
+  var decimalValue = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var romanNumeral = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I",
+  ];
 
-  for (let i of Object.keys(roman)) {
-    let q = Math.floor(number / roman[i]);
-    number -= q * roman[i];
-    romanString += i.repeat(q);
+  var romanized = "";
+
+  for (var index = 0; index < decimalValue.length; index++) {
+    while (decimalValue[index] <= num) {
+      romanized += romanNumeral[index];
+      num -= decimalValue[index];
+    }
   }
 
-  return romanString;
+  return romanized;
 };
 
 /* Hexadecimal Number */
@@ -72,7 +77,7 @@ export const generateDecimal = (number) => {
 
 /* Binary */
 export const convertToBinary = (number) => {
-  return (number >>> 0).toString(2);
+  return parseInt(number).toString(2);
 };
 
 /* Percent */
@@ -82,14 +87,128 @@ export const convertToPercent = (number) => {
 
 /* Currency */
 export const convertToCurrency = (number) => {
-  return "$" + number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  return "$" + number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/);
 };
 
+/* Generate number to be matched */
 export const generateNumber = () => {
-  // UPDATE THIS WITH SPECIFIC NUMBER FOR EACH CATEGORY
-  return Math.floor(Math.random() * Math.floor(1000.0));
+  return Math.floor(Math.random() * Math.floor(200));
 };
 
-export const randomIntFromInterval = (min, max) => { // min and max included 
+/* Randomize the array of numbers by min and max */
+export const randomIntFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
+
+// Fill up the array based on the category
+export const getNumberArray = (category, difficulty, chosenNumber) => {
+  arrayOfNumbers.clear();
+  let level = "";
+
+  // DIFFICULTY BY LEVEL
+  if (difficulty === "EASY") {
+    level = EASY;
+  }
+  if (difficulty === "MEDIUM") {
+    level = MEDIUM;
+  }
+  if (difficulty === "HARD") {
+    level = HARD;
+  }
+
+  // ROMAN
+  if (category == "ROMAN") {
+    arrayOfNumbers.add(convertToRoman(chosenNumber));
+
+    while (arrayOfNumbers.size != level + 1) {
+      let randomNumber = randomIntFromInterval(33, 499);
+      let random = convertToRoman(randomNumber);
+      if (!arrayOfNumbers.has(chosenNumber)) {
+        arrayOfNumbers.add(chosenNumber);
+      } else {
+        arrayOfNumbers.add(random);
+      }
+    }
+  }
+
+  // DECIMAL
+  if (category === "DECIMAL") {
+    arrayOfNumbers.add(generateDecimal(chosenNumber));
+
+    while (arrayOfNumbers.size != level + 1) {
+      let randomNumber = randomIntFromInterval(10, 1000);
+
+      if (!arrayOfNumbers.has(chosenNumber)) {
+        arrayOfNumbers.add(chosenNumber);
+      } else {
+        arrayOfNumbers.add(randomNumber);
+      }
+    }
+  }
+
+  // BINARY
+  if (category == "BINARY") {
+    arrayOfNumbers.add(convertToBinary(chosenNumber));
+
+    while (arrayOfNumbers.size != level + 1) {
+      let randomNumber = convertToBinary(randomIntFromInterval(100, 300));
+      if (!arrayOfNumbers.has(chosenNumber)) {
+        arrayOfNumbers.add(chosenNumber);
+      } else {
+        arrayOfNumbers.add(randomNumber);
+      }
+    }
+  }
+
+  // HEXADECIMAL
+  if (category === "HEXADECIMAL") {
+    arrayOfNumbers.add(convertToHex(chosenNumber));
+
+    while (arrayOfNumbers.size != level + 1) {
+      let random = randomIntFromInterval(50, 999);
+      let randomNumber = convertToHex(random);
+      if (!arrayOfNumbers.has(chosenNumber)) {
+        arrayOfNumbers.add(chosenNumber);
+      } else {
+        arrayOfNumbers.add(randomNumber);
+      }
+    }
+  }
+
+  // PERCENT
+  if (category === "PERCENT") {
+    arrayOfNumbers.add(convertToPercent(chosenNumber));
+
+    while (arrayOfNumbers.size != level + 1) {
+      let random = randomIntFromInterval(20, 220);
+      let randomNumber = convertToPercent(random);
+      if (!arrayOfNumbers.has(chosenNumber)) {
+        arrayOfNumbers.add(chosenNumber);
+      } else {
+        arrayOfNumbers.add(randomNumber);
+      }
+    }
+  }
+
+  // CURRENCY
+  if (category === "CURRENCY") {
+    arrayOfNumbers.add(convertToCurrency(chosenNumber));
+
+    while (arrayOfNumbers.size != level + 1) {
+      let random = randomIntFromInterval(20, 220);
+      let randomNumber = convertToCurrency(random);
+      if (!arrayOfNumbers.has(chosenNumber)) {
+        arrayOfNumbers.add(chosenNumber);
+      } else {
+        arrayOfNumbers.add(randomNumber);
+      }
+    }
+  }
+
+  const array = [...arrayOfNumbers];
+  const shuffle = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
+  shuffle(array);
+  return array;
+};
