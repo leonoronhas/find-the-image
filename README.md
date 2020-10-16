@@ -1,7 +1,7 @@
 # Match the Number! [Mobile Game]
 
 ## Objective
-Test your ability to focus, and find the correct number amongst several similar numbers within a time period. Do you consider yourself attentive and accurate? Are you sure you can find THE number before the time runs out? That are some of the points and questions that you should be thinking when you try Match the Number game.
+Test your ability to focus, and find the correct number amongst several similar numbers within a time period. Do you consider yourself attentive and accurate? Are you sure you can find THE number before the time runs out? These are some of the points and questions that you should be thinking when you try Match the Number game.
 
 ### Demo
 Coming soon!
