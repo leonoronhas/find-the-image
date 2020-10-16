@@ -11,6 +11,7 @@ const DefaultButton = (props) => {
       style={{ ...styles.button, ...props.style }}
       activeOpacity={0.8}
       id={props.id}
+      disabled={props.disabled}
     >
       <Text style={styles.buttonText} allowFontScaling={false}>
         {props.children}
