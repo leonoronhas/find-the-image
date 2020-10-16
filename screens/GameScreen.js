@@ -28,11 +28,12 @@ const GameScreen = ({ navigation }) => {
   const [category, setCategory] = useState(getOption());
   const [difficulty, setDifficulty] = useState(getDifficultyOption());
   const [chosenNumber, setChosenNumber] = useState(getChosenNumber());
-  const [selected, setSelected] = useState("");
   const [isModalVisible, setModalVisible] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
+    setIsOpened(!isOpened);
   };
 
   const generateGameOptions = () => {
@@ -50,7 +51,6 @@ const GameScreen = ({ navigation }) => {
             } else {
               console.log("wrong one");
             }
-            // EventRegister.emit("setSelected", option);
           }}
         >
           <DefaultBodyText style={styles.optionText}>{option}</DefaultBodyText>
@@ -64,9 +64,14 @@ const GameScreen = ({ navigation }) => {
       <StatusBar hidden />
       <View style={styles.gameHeaderContainer}>
         <GameHeader
-          onPress={() => navigation.push("HomeScreen")}
-          onPressEye={() => {}}
-          modal={() => isModalVisible}
+          onPress={() =>
+            navigation.push("NewGameStack", { screen: "HomeScreen" })
+          } //Home icon
+          onPressEye={() => {}} // Eye icon
+          greenModal={isOpened}
+          beforeGame={() =>
+            navigation.push("NewGameStack", { screen: "BeforeGameScreen" })
+          }
         />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -82,7 +87,7 @@ const GameScreen = ({ navigation }) => {
               style={{ flex: 1, flexDirection: "row", alignItems: "center" }}
             >
               <View style={styles.leftContainer}>
-                <View style={{ flex: 1, alignItems: "flex-start" }}>
+                <View style={styles.congratsContainer}>
                   <DefaultTitleText style={styles.congratsText}>
                     Congrats!
                   </DefaultTitleText>
@@ -92,10 +97,10 @@ const GameScreen = ({ navigation }) => {
                 </View>
                 <View style={styles.results}>
                   <DefaultBodyText style={styles.textResults}>
-                    RECORD: 2 SECONDS
+                    RECORD: 2 seconds
                   </DefaultBodyText>
                   <DefaultBodyText style={styles.textResults}>
-                    TIME SPENT: 5 SECONDS
+                    TIME SPENT: 5 seconds
                   </DefaultBodyText>
                 </View>
               </View>
@@ -114,7 +119,10 @@ const GameScreen = ({ navigation }) => {
                   </DefaultButton>
                   <TouchableOpacity
                     activeOpacity={0.8}
-                    onPress={() => navigation.push("HomeScreen")}
+                    onPress={() => {
+                      setModalVisible(false);
+                      navigation.push("HomeScreen");
+                    }}
                   >
                     <DefaultBodyText style={styles.returnToHomeText}>
                       RETURN TO HOME INSTEAD
@@ -164,10 +172,15 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   leftContainer: {
-    height: verticalScale(300),
-    width: scale(240),
+    height: verticalScale(290),
+    width: scale(270),
     alignItems: "center",
     justifyContent: "space-around",
+  },
+  congratsContainer: {
+    height: verticalScale(120),
+    width: scale(260),
+    alignItems: "flex-start",
   },
   congratsText: {
     fontSize: RFPercentage(7),
@@ -177,7 +190,7 @@ const styles = StyleSheet.create({
   },
   results: {
     height: verticalScale(120),
-    width: scale(210),
+    width: scale(260),
     alignItems: "flex-start",
     justifyContent: "space-evenly",
   },
@@ -186,8 +199,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   rightContainer: {
-    height: verticalScale(300),
-    width: scale(240),
+    height: verticalScale(290),
+    width: scale(270),
     alignItems: "center",
     justifyContent: "space-between",
   },
@@ -196,7 +209,7 @@ const styles = StyleSheet.create({
   },
   levelButtonContainer: {
     height: verticalScale(120),
-    width: scale(230),
+    width: scale(260),
     alignItems: "center",
     justifyContent: "space-evenly",
   },
