@@ -11,8 +11,6 @@ import DifficultyScreen from "../screens/DifficultyScreen";
 import BeforeGameScreen from "../screens/BeforeGameScreen";
 import HomeScreen from "../screens/HomeScreen";
 
-import GameStackNavigator from '../navigation/GameStackNavigator';
-
 const NewGameStack = createStackNavigator();
 
 const NewGameStackNavigator = () => {
@@ -59,14 +57,6 @@ const NewGameStackNavigator = () => {
             ...TransitionPresets.ModalTransition,
           }}
         />
-        {/* <NewGameStack.Screen
-         name="GameStack"
-         component={GameStackNavigator}
-         options={{
-           headerShown: false,
-           ...TransitionPresets.ModalTransition,
-         }}
-        /> */}
       </NewGameStack.Navigator>
     </SafeAreaProvider>
   );
