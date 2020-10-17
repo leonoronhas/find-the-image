@@ -6,9 +6,9 @@ Match the number among 60, 90, or 120 different numbers based on a pre-set categ
 ## Purpose
 Test your ability to focus, and find the correct number amongst several similar numbers within a time period. Do you consider yourself attentive and accurate? Are you sure you can find THE number before the time runs out? These are some of the points and questions that you should be thinking when you try Match the Number game.
 
-### Demo
+### Demo :movie_camera:
 Coming soon!
-### Screenshots
+### Screenshots :framed_picture:
 <details>
 <summary>Complete list</summary>
 <details>
@@ -89,10 +89,10 @@ Coming soon!
 </details>
 </details>
 
-### Platform
+### Platform :iphone:
 Android | iOS
 
-### Languages | Tools
+### Languages | Tools :earth_americas:
 Built using Javascript ECMAScript 6, [React Native](https://reactnative.dev/), [Expo](https://expo.io/), JSX, and npm
 
 Dependency | Description
