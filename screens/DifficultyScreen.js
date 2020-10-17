@@ -39,7 +39,7 @@ const DifficultyScreen = ({ navigation }) => {
             <DefaultBodyText style={styles.difficultyEasyText}>
               EASY{"           "}
               <DefaultBodyText style={styles.difficultyEasyText2}>
-                30 seconds {"           "}40 numbers
+                30 seconds {"           "}60 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>
@@ -54,7 +54,7 @@ const DifficultyScreen = ({ navigation }) => {
             <DefaultBodyText style={styles.difficultyMediumText}>
               MEDIUM{"      "}
               <DefaultBodyText style={styles.difficultyMediumText2}>
-                30 seconds {"      "}60 numbers
+                30 seconds {"      "}90 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>
@@ -69,7 +69,7 @@ const DifficultyScreen = ({ navigation }) => {
             <DefaultBodyText style={styles.difficultyHardText}>
               HARD{"          "}
               <DefaultBodyText style={styles.difficultyHardText2}>
-                20 seconds{"           "}80 numbers
+                20 seconds{"           "}120 numbers
               </DefaultBodyText>
             </DefaultBodyText>
           </DefaultButton>

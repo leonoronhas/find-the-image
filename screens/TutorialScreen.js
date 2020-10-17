@@ -57,21 +57,21 @@ const TutorialScreen = ({ navigation }) => {
             {"              "}
             <Text style={styles.buttonText2}>30 SECONDS</Text>
             {"              "}
-            <Text style={styles.buttonText2}>40 NUMBERS</Text>
+            <Text style={styles.buttonText2}>60 NUMBERS</Text>
           </DefaultButton>
           <DefaultButton style={styles.difficultyContainer} disabled>
             <Text style={styles.buttonText3Title}>MEDIUM</Text>
             {"              "}
             <Text style={styles.buttonText3}>30 SECONDS</Text>
             {"              "}
-            <Text style={styles.buttonText3}>60 NUMBERS</Text>
+            <Text style={styles.buttonText3}>90 NUMBERS</Text>
           </DefaultButton>
           <DefaultButton style={styles.difficultyContainer} disabled>
             <Text style={styles.buttonText4Title}>HARD</Text>
             {"              "}
             <Text style={styles.buttonText4}>20 SECONDS</Text>
             {"              "}
-            <Text style={styles.buttonText4}>80 NUMBERS</Text>
+            <Text style={styles.buttonText4}>120 NUMBERS</Text>
           </DefaultButton>
         </View>
       </View>
