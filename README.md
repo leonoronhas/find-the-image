@@ -1,6 +1,9 @@
 # Match the Number! [Mobile Game]
 
 ## Objective
+Match the number among 60, 90, or 120 different numbers based on a pre-set category and difficulty before the time runs out.
+
+## Purpose
 Test your ability to focus, and find the correct number amongst several similar numbers within a time period. Do you consider yourself attentive and accurate? Are you sure you can find THE number before the time runs out? These are some of the points and questions that you should be thinking when you try Match the Number game.
 
 ### Demo
@@ -8,10 +11,17 @@ Coming soon!
 ### Screenshots
 <details>
 <summary>Splash Screen</summary>
-<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/welcomeScreen.png">
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/splash.png">
+</p>
+  
 </details>
-
-
+<details>
+<summary>Welcome Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/welcomeScreen.png">
+</p>
+</details>
 
 ### Platform
 Android | iOS
