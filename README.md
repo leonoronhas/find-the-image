@@ -10,12 +10,14 @@ Test your ability to focus, and find the correct number amongst several similar 
 Coming soon!
 ### Screenshots
 <details>
+<summary>Complete list</summary>
+<details>
 <summary>Splash Screen</summary>
 <p align="center">
 <img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/splash.png">
 </p>
-  
 </details>
+  
 <details>
 <summary>Welcome Screen</summary>
 <p align="center">
@@ -84,6 +86,7 @@ Coming soon!
 <p align="center">
 <img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/gameScreen.png">
 </p>
+</details>
 </details>
 
 ### Platform
