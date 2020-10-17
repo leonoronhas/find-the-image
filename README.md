@@ -23,6 +23,69 @@ Coming soon!
 </p>
 </details>
 
+<details>
+<summary>Tutorial 1</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/tutorialCategory.png">
+</p>
+</details>
+
+<details>
+<summary>Tutorial 2</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/tutorialDifficulty.png">
+</p>
+</details>
+
+<details>
+<summary>Ready Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/ready.png">
+</p>
+</details>
+
+<details>
+<summary>Home Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/homeScreen.png">
+</p>
+</details>
+
+<details>
+<summary>New Game Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/newGameScreen.png">
+</p>
+</details>
+
+<details>
+<summary>Choose Category Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/chooseCategory.png">
+</p>
+</details>
+
+<details>
+<summary>Choose Difficulty Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/chooseDifficulty.png">
+</p>
+</details>
+
+<details>
+<summary>Before Game Starts Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/beforeGameStarts.png">
+</p>
+</details>
+
+<details>
+<summary>Game Screen</summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonoronhas/match-the-number/master/assets/images/screenshots/gameScreen.png">
+</p>
+</details>
+
 ### Platform
 Android | iOS
 
