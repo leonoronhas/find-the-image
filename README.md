@@ -1,4 +1,4 @@
-# Match the Number! :video_game: :iphone: [ In Progress 85/100]
+# Match the Number! :video_game: :iphone: [In Progress 85/100]
 ### Objective
 Match the number among 60, 90, or 120 different numbers based on a pre-set category and difficulty before the time runs out.
 
